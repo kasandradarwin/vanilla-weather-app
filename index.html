@@ -17,16 +17,23 @@
   <body>
     <div class="container">
       <div class="weather-app">
+        <div class = "overview">
     <h1>Nanaimo</h1>
     <ul>
       <li>Friday 05:00</li>
       <li>clear</li>
     </ul>
+    </div>
     <div class="row">
       <div class="col-6">
+        <div class="clearfix weather-temperature">
         <img src="https://ssl.gstatic.com/onebox/weather/64/cloudy.png"
-        alt="clear" />
-        12°C | F
+        class="float-left"
+        />
+        <div class="float-left">
+        <span class= "current-temp">12</span> <small class="current-temp-units">°C | °F</small>
+        </div>
+        </div>
       </div>
       <div class="col-6">
         <ul>
@@ -36,8 +43,9 @@
         </ul>
       </div>
       </div>
-      <small><a href="https://github.com/kasandradarwin/vanilla-weather-app"  target="_blank" </a> Open-Source Code by Kasandra Darwin</small>
     </div>
+          <small><a href="https://github.com/kasandradarwin/vanilla-weather-app"  target="_blank" </a> Open-Source Code by Kasandra Darwin</small>
+
     </div>
     <script src="src/app.js"></script>
   </body>
