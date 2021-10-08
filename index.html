@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=>, initial-scale=1.0" />
+    <meta name="viewport", initial-scale=1.0 />
     <title>Weather App</title>
 
     <link
@@ -12,16 +12,18 @@
       integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU"
       crossorigin="anonymous"
     />
+    <script src= "https://unpkg.com/axios/dist/axios.min.js" ></script>
+
     <link rel="stylesheet" href="src/style.css" />
   </head>
   <body>
     <div class="container">
       <div class="weather-app">
         <div class = "overview">
-    <h1>Nanaimo</h1>
+    <h1 class="cityName">nanaimo</h1>
     <ul>
-      <li>Friday 05:00</li>
-      <li>clear</li>
+      <li>Last updated: <span id= "date">FriDay 15:00</span> </li>
+      <li class= "descrip">clear</li>
     </ul>
     </div>
     <div class="row">
@@ -31,15 +33,15 @@
         class="float-left"
         />
         <div class="float-left">
-        <span class= "current-temp">12</span> <small class="current-temp-units">°C | °F</small>
+        <span id= "current-temp">12</span> <sup class="current-temp-units"> °C | °F</sup>
         </div>
         </div>
       </div>
       <div class="col-6">
         <ul>
-          <li>Precipitation: 0%</li>
-          <li>Humidity: 75%</li>
-          <li>Wind: 2 kph</li>
+         
+          <li> humidity: <span class = "humid"> 75</span>%</li>
+          <li> wind:<span class = "wind"> 2 </span> KPH</li>
         </ul>
       </div>
       </div>
