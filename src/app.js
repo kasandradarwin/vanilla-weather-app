@@ -22,8 +22,10 @@ function formatDate(timestamp) {
 function displayTemperature(response) {
   console.log(response);
 
+  celsiusTemperature = response.data.main.temp;
+
   let temperatureElement = document.querySelector("#current-temp");
-  temperatureElement.innerHTML = Math.round(response.data.main.temp);
+  temperatureElement.innerHTML = Math.round(celsiusTemperature);
 
   let city = document.querySelector(".cityName");
   city.innerHTML = response.data.name;
@@ -59,10 +61,31 @@ function handleSubmit(event) {
   event.preventDefault();
   let cityInput = document.querySelector("#city-input");
   search(cityInput.value);
-  console.log(cityInput.value);
 }
 
-search("Nanaimo");
+function displayFahrenheitTemperature(event) {
+  event.preventDefault();
+  let temperatureElement = document.querySelector("#current-temp");
+  let fahrenheitTemp = (celsiusTemperature * 9) / 5 + 32;
+  temperatureElement.innerHTML = Math.round(fahrenheitTemp);
+}
+
+function displayCelsiusTemperature(event) {
+  event.preventDefault();
+
+  let temperatureElement = document.querySelector("#current-temp");
+  temperatureElement.innerHTML = Math.round(celsiusTemperature);
+}
+
+let celsiusTemperature = null;
 
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", handleSubmit);
+
+let fahrenheitlink = document.querySelector("#fahr");
+fahrenheitlink.addEventListener("click", displayFahrenheitTemperature);
+
+let celslink = document.querySelector("#cels");
+celslink.addEventListener("click", displayCelsiusTemperature);
+
+search("Nanaimo");
