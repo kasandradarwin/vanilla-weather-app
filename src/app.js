@@ -49,9 +49,20 @@ function displayTemperature(response) {
   iconElement.setAttribute("alt", response.data.weather[0].description);
 }
 
-let apiKey = "40603cc0b95a9db4d38003ce742650b3";
-let cityName = "nanaimo";
-let apiUrl = `http://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${apiKey}&units=metric`;
+function search(city) {
+  let apiKey = "40603cc0b95a9db4d38003ce742650b3";
+  let apiUrl = `http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(displayTemperature);
+}
 
-console.log(apiUrl);
-axios.get(apiUrl).then(displayTemperature);
+function handleSubmit(event) {
+  event.preventDefault();
+  let cityInput = document.querySelector("#city-input");
+  search(cityInput.value);
+  console.log(cityInput.value);
+}
+
+search("Nanaimo");
+
+let form = document.querySelector("#search-form");
+form.addEventListener("submit", handleSubmit);
