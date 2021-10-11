@@ -23,6 +23,44 @@ function formatDate(timestamp) {
   let day = days[date.getDay()];
   return `${day} ${hours}:${minutes}`;
 }
+function displayForecast(response) {
+  console.log(response.data.daily);
+  let forecastElement = document.querySelector("#forecast");
+
+  let forecastHTML = `<div class="row">`;
+  let days = ["Thu", "Fri", "Sat", "Sun", "Mon"];
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `
+        <div class="col-2">
+          <div class="weather-forecast-date">
+          ${day}
+        </div>
+          <img src="https://ssl.gstatic.com/onebox/weather/48/rain.png" alt="" width="36"
+          />
+          <div class= weather-forecast-temperatures>
+           <span class="weather-forecast-temperature-max"> 18</span>°
+<span class="weather-forecast-temperature-min"> 10</span>°
+          </div>
+      </div>
+      `;
+  });
+
+  forecastHTML = forecastHTML + `</div >`;
+
+  forecastElement.innerHTML = forecastHTML;
+}
+
+function getForecast(coordinates) {
+  console.log(coordinates);
+  let apiKey = "40603cc0b95a9db4d38003ce742650b3";
+  let lon = coordinates.lon;
+  let lat = coordinates.lat;
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`;
+  console.log(apiUrl);
+  axios.get(apiUrl).then(displayForecast);
+}
 
 function displayTemperature(response) {
   console.log(response);
@@ -54,6 +92,8 @@ function displayTemperature(response) {
     `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
   iconElement.setAttribute("alt", response.data.weather[0].description);
+
+  getForecast(response.data.coord);
 }
 
 function search(city) {
@@ -94,3 +134,4 @@ let celslink = document.querySelector("#cels");
 celslink.addEventListener("click", displayCelsiusTemperature);
 
 search("Nanaimo");
+displayForecast();
