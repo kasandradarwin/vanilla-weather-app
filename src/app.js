@@ -48,7 +48,7 @@ function displayForecast(response) {
         </div>
           <img src="https://openweathermap.org/img/wn/${
             forecastDay.weather[0].icon
-          }@2x.png" alt="" width="36"
+          }@2x.png" alt="" width="45"
           />
           <div class= weather-forecast-temperatures>
            <span class="weather-forecast-temperature-max"> ${Math.round(
@@ -124,30 +124,8 @@ function handleSubmit(event) {
   search(cityInput.value);
 }
 
-function displayFahrenheitTemperature(event) {
-  event.preventDefault();
-  let temperatureElement = document.querySelector("#current-temp");
-  let fahrenheitTemp = (celsiusTemperature * 9) / 5 + 32;
-  temperatureElement.innerHTML = Math.round(fahrenheitTemp);
-}
-
-function displayCelsiusTemperature(event) {
-  event.preventDefault();
-
-  let temperatureElement = document.querySelector("#current-temp");
-  temperatureElement.innerHTML = Math.round(celsiusTemperature);
-}
-
-let celsiusTemperature = null;
-
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", handleSubmit);
-
-let fahrenheitlink = document.querySelector("#fahr");
-fahrenheitlink.addEventListener("click", displayFahrenheitTemperature);
-
-let celslink = document.querySelector("#cels");
-celslink.addEventListener("click", displayCelsiusTemperature);
 
 search("Nanaimo");
 displayForecast();

@@ -1,9 +1,13 @@
 h1 {
   color: #878787;
-  font-size: 24px;
+  font-size: 40px;
   font-weight: 100px;
   line-height: 28px;
   margin-bottom: 0;
+}
+
+#description {
+  margin: 0 auto;
 }
 
 ul {
@@ -27,6 +31,7 @@ li:first-letter {
   padding: 20px;
   border: 1px solid #dadde1;
   border-radius: 5px;
+  color: #878787;
 }
 
 .overview {
@@ -68,9 +73,14 @@ li:first-letter {
 }
 
 .weather-forecast-temperature-min {
-  opacity: 0.5;
+  opacity: 0.9;
 }
 
-button {
-  color: orangered;
+.labels {
+  color: #f74f43;
+}
+
+.btn-primary {
+  background-color: #f74f43 !important;
+  border: #f74f43 !important;
 }

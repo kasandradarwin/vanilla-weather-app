@@ -25,13 +25,15 @@
           <input type="search" placeholder="Type a city" class="form-control" id="city-input"/>
           </div>
           <div class="col-3">
-        <input type="submit" value="search" class="btn btn-primary" w-100 />
+        <input type="submit" value="Search" class="btn btn-primary" w-100 />
         </form></div></div>
         <div class = "overview">
     <h1 class="cityName">nanaimo</h1>
+
     <ul>
-      <li>Last updated: <span id= "date"></span> </li>
-      <li class= "descrip">clear</li>
+      <li><sup><span class = "labels">Last updated</span>: <span id= "date"></span> </li></sup>
+
+      <li> <span class ="labels" id="description">Current</span>: <span class = "descrip"></span></span></li>
     </ul>
     </div>
     <div class="row">
@@ -42,21 +44,22 @@
         class="float-left"
         />
         <div class="float-left">
-        <span id= "current-temp">12</span> <sup class="current-temp-units"> <a href="#" id="cels">°C</a> | <a href="#" id="fahr">°F</a></sup>
+        <span id= "current-temp">12</span>°C
         </div>
         </div>
       </div>
       <div class="col-6">
         <ul>
          
-          <li> humidity: <span class = "humid"> 75</span>%</li>
-          <li> wind: <span class = "wind"> 2 </span> KPH</li>
+          <li> <span class = "labels">humidity</span>: <span class = "humid" class = "labels"> 75</span>%</li>
+          <li> <span class = "labels">wind</span>: <span class = "wind"> 2 </span> KPH</li>
         </ul>
       </div>
       </div>
+
       <div class ="weather-forecast" id="forecast"> </div>
     </div>
-          <small><a href="https://github.com/kasandradarwin/vanilla-weather-app"  target="_blank" Open-Source Code </a> by Kasandra Darwin</small>
+          <small> <a href="https://github.com/kasandradarwin/vanilla-weather-app"  target="_blank" </a> Open-Source Code by Kasandra Darwin</small>
 
     </div>
     
