@@ -32,6 +32,7 @@ li:first-letter {
   border: 1px solid #dadde1;
   border-radius: 5px;
   color: #878787;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 .overview {
@@ -44,9 +45,13 @@ li:first-letter {
   width: 64px;
 }
 
+#icon {
+  width: 40%;
+  height: 40%;
+}
+
 #current-temp {
-  color: rgb (33, 33, 33);
-  font-size: 64px;
+  font-size: 60px;
   line-height: 1;
   font-weight: 400;
   position: relative;
